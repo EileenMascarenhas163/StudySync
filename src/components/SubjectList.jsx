@@ -16,7 +16,7 @@ function SubjectList() { // Removed props (subjects, onDelete, onUpdate) as comp
           setError('Please log in to view subjects.');
           return;
         }
-        const res = await axios.get('http://localhost:5000/api/subjects', {
+        const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/subjects', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSubjects(res.data || []);
@@ -68,7 +68,7 @@ function SubjectList() { // Removed props (subjects, onDelete, onUpdate) as comp
           deadline: editForm.deadline || undefined,
         };
         const res = await axios.put(
-          `http://localhost:5000/api/subjects/${id}`,
+          `https://study-sync-chi-nine.vercel.app/api/subjects/${id}`,
           updatedSubject,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -104,7 +104,7 @@ function SubjectList() { // Removed props (subjects, onDelete, onUpdate) as comp
       try {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No authentication token found.');
-        await axios.delete(`http://localhost:5000/api/subjects/${id}`, {
+        await axios.delete(`https://study-sync-chi-nine.vercel.app/api/subjects/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         // Update the subjects state directly

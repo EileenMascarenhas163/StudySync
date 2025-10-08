@@ -72,7 +72,7 @@ Start MongoDB (if running locally):mongod
 
 Start the backend server:npm start
 
-The server will run on http://localhost:5000.
+The server will run on https://study-sync-chi-nine.vercel.app.
 
 3. Set Up the Frontend
 

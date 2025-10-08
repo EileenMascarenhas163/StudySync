@@ -23,7 +23,7 @@ function App() {
     }
 
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/validate', {
+      const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/auth/validate', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.valid) {
