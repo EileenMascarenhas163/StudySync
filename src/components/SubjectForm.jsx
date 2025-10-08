@@ -29,7 +29,7 @@ function SubjectForm({ onAddSubject }) {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No authentication token found.');
         const res = await axios.post(
-          'https://study-sync-chi-nine.vercel.app/api/subjects',
+          '/api/subjects',
           { name, hours: Number(hours), deadline: deadline || undefined },
           { headers: { Authorization: `Bearer ${token}` } }
         );

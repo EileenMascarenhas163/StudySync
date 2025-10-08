@@ -17,7 +17,7 @@ function SchedulePage({ subjects: propSubjects }) {
 
   const fetchSubjects = async (token) => {
     try {
-      const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/subjects', {
+      const res = await axios.get('/api/subjects', {
         headers: { Authorization: `Bearer ${token}` },
         timeout: 10000,
       });
@@ -44,7 +44,7 @@ function SchedulePage({ subjects: propSubjects }) {
           return;
         }
         const [scheduleRes] = await Promise.all([
-          axios.get('https://study-sync-chi-nine.vercel.app/api/schedules', {
+          axios.get('/api/schedules', {
             headers: { Authorization: `Bearer ${token}` },
             timeout: 10000,
           }),
@@ -101,7 +101,7 @@ function SchedulePage({ subjects: propSubjects }) {
 
   const fetchSchedule = async (token) => {
     try {
-      const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/schedules', {
+      const res = await axios.get('/api/schedules', {
         headers: { Authorization: `Bearer ${token}` },
         timeout: 10000,
       });
@@ -288,7 +288,7 @@ function SchedulePage({ subjects: propSubjects }) {
       while (attempt < maxRetries && !success) {
         try {
           const response = await axios.post(
-            'https://study-sync-chi-nine.vercel.app/api/schedules',
+            '/api/schedules',
             { 
               subject: subjectName,
               startDate, 

@@ -6,22 +6,6 @@ const User = require('../models/User');
 const router = express.Router();
 
 
-module.exports = (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
-  if (!token) {
-    console.log('No token provided in request');
-    return res.status(401).json({ error: 'No token provided' });
-  }
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Token verified successfully:', decoded);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    console.error('Token verification failed:', error.message);
-    res.status(400).json({ error: 'Invalid token' });
-  }
-};
 // Register a new user
 router.post('/register', async (req, res) => {
   console.log('Register endpoint hit with body:', req.body);

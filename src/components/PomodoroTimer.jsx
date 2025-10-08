@@ -39,7 +39,7 @@ function PomodoroTimer({ subjects = [] }) { // Default prop to empty array
       if (!subject) return;
       const newHoursStudied = (subject.hoursStudied || 0) + 25 / 60; // 25 minutes
       await axios.put(
-        `https://study-sync-chi-nine.vercel.app/api/subjects/${subjectId}`,
+        `/api/subjects/${subjectId}`,
         { hoursStudied: newHoursStudied },
         { headers: { Authorization: `Bearer ${token}` } }
       );

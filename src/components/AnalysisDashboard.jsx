@@ -20,7 +20,7 @@ function AnalysisDashboard({ subjects, schedule }) {
       if (!token) {
         throw new Error('No authentication token found. Please log in again.');
       }
-      const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/reports', {
+      const res = await axios.get('/api/reports', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setReports(res.data);

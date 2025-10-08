@@ -37,7 +37,7 @@ function Register({ onRegister }) {
     }
 
     try {
-      const res = await axios.post('https://study-sync-chi-nine.vercel.app/api/auth/register', {
+      const res = await axios.post('/api/auth/register', {
         name,
         email,
         password,

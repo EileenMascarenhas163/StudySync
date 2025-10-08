@@ -9,7 +9,7 @@ function Home() {
   const fetchSubjects = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('https://study-sync-chi-nine.vercel.app/api/subjects', {
+      const res = await axios.get('/api/subjects', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSubjects(res.data);
